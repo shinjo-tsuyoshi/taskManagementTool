@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head th:replace="taskManagement :: meta_header('タスク追加',~{::link},~{::script})">   
+ 	<!-- CSS/JS -->
+    <link th:href="@{/css/addition.css}" rel="stylesheet">
+    <script th:src="@{/js/taskManagement.js}"></script>
+</head>
+<body>
+    <main>
+		<div th:replace="taskManagement :: header"></div>
+		<section id="mainLayout">
+	        <!-- ---------------------- ヘッド部分 ---------------------- -->
+	        <div class="logo">
+	            <p class="headerLogo"> - タスク追加 - </p>
+	            <!-- <img src="../image/addPageLogo.png" class="headerLogo"> -->
+	        </div>
+	        
+	        <!-- ---------------------- メイン部分 ---------------------- -->
+	        <form action="#" th:action="@{/taskManagement/todo}" th:object="${registerAddition}" method="post" id="container" class="wid80">
+<!--		        <div id="container" class="wid80">-->
+		            <div id="firstLabelContainer">
+		                <!-- ラベル選択 -->
+		                    <div id="labelItemContainer">
+		                        <label class="label disFlexAllCenter">ラベル　</label>
+		                        <select name="label" id="labelItem" class="labItem">
+		                            <option>1</option>
+		                            <option>2</option>
+		                            <option>3</option>
+		                            <option>4</option>
+		                            <option>5</option>
+		                        </select>
+		                    </div>
+		                    <!-- 追加ボタン -->
+<!--		                    <a th:href="@{/taskManagement/todo}" id="addBtn" class="fontSize13 borderBoxBtn">追加</a>-->
+							<input type="submit" id="addBtn" class="fontSize13 boderBoxBtn" value="追加">
+		
+		            </div>
+		
+		            <!-- 名　称 -->
+		            <div class="labelLow">
+		                <label class="label disFlexAllCenter">名　称　</label>
+		                <input type="text" name="taskName" id="itemName" class="labItem">
+		            </div>
+		            
+		            <!-- 優先度 -->
+		            <div class="labelLow">
+		                <label class="label disFlexAllCenter">優先度　</label>
+		                <div id="radio">
+		                    <input type="radio" name="priority" value="高" class="labItem radioItem"><label class="margin-left10 margin-right50">高</label>
+		                    <input type="radio" name="priority" value="普" class="labItem radioItem"><label class="margin-left10 margin-right50">普</label>
+		                    <input type="radio" name="priority" value="低" class="labItem radioItem"><label class="margin-left10 margin-right50">低</label>
+		                </div>
+		            </div>
+		
+		            <!-- 期 日 -->
+		            <div class="labelLow">
+		                <label class="label disFlexAllCenter">期　日　</label>
+		                <div class="labItem">
+		                    <input type="date" name="startDueDate" id="startDay" class="Day">　〜　<input type="date" name="endDueDate" id="endDay" class="Day">
+		                </div>
+		            </div>
+		            
+		            <!-- メ　モ -->
+		            <div class="labelLow" id="textarea">
+		                <label class="label">メ　モ　</label>
+		                <textarea  name="memo" class="labItem"></textarea>
+		            </div>
+<!--		        </div>-->
+	        </form>
+        </section>
+        <script src="../taskManagement/taskManagement.js"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+#mainLayout{
+	width: 80vw;
+	height: 100vh;
+    font-size: 7vw;
+    opacity: 1;
+    font-family: 'Yusei Magic', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--sub-bg-color);
+}

@@ -1,0 +1,82 @@
+/* ************************
+ * 入力項目全体のレイアウト
+ * ************************/
+ #container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+/* 項目名 */
+/* input text */
+.labItem{
+    width: 80%;
+}
+
+#labelPullDown{
+    width: 50%;
+}
+
+/* ラジオボタン レイアウト */
+#radio{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.radioItem{
+    height: 12px;
+    width: 12px;
+}
+
+/* ラジオボタン 文字の余白 */
+.margin-left10{
+    margin-left: 10px;
+}
+.margin-right50{
+    margin-right: 50px;
+}
+
+
+/* 項目名/入力箇所合わせるよう */
+.labelLow{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 1行目用 */
+#firstLabelContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 1行目用 */
+.labelItemContainer{
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#secondLabelContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progressItemContainer{
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 追加ボタン */
+#addBtn{
+    width: 15%;
+}
+
+#textarea{
+    height: 80px;
+}
