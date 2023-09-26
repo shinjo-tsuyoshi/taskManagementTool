@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="taskManagement :: meta_header('今日のタスク',~{::link},~{::script})">   
+ 	<!-- CSS/JS -->
+    <link th:href="@{/css/todayTask.css}" rel="stylesheet">
+    <script th:src="@{/js/taskManagement.js}"></script>
+</head>
+
+<body>
+    <main>
+		<div th:replace="taskManagement :: header"></div>
+		<section id="mainLayout">
+	        <!-- ---------------------- ヘッド部分 ---------------------- -->
+	        <div class="logo">
+	            <p class="headerLogo"> - 今日のタスク - </p>
+	            <!-- <img src="../image/todayTaskPageLogo.png" class="headerLogo"> -->
+	            <div class="searchContainer">
+	                <div class="searchBox1">
+	                    <label>項目</label>
+	                    <select>
+	                        <option>ラベル</option>
+	                        <option>進捗(以前)</option>
+	                        <option>優先度</option>
+	                        <option>締切日(以前)</option>
+	                    </select>
+	                    <label>検索</label>
+	                    <input type="text">
+	                </div>
+	                <div class="searchBox2">
+	                    <input type="checkbox">
+	                    <p>進捗100%を含める</p>
+	                </div>
+	            </div>
+	        </div>
+	
+	         <!-- ---------------------- メイン部分 ---------------------- -->
+	         <div class="wid80">
+	            <table id="taskTable">
+	                <tr>
+	                    <th class="th fontSize16 borderRight" id="checkBoxTh">完了</th>
+	                    <th class="th fontSize16" id="taskTh">タスク</th>
+	                    <th class="th fontSize16" id="labelTh">ラベル</th>
+	                    <th class="th fontSize16" id="priorityTh">優先度</th>
+	                    <th class="th fontSize16" id="dayTh">締切日</th>
+	                    <th class="th fontSize16" id="buttonTh"></th>
+	                </tr>
+	                <!-- ここは仮 jsで入れる部分 -->
+	                <tr>
+	                    <td class="td fontSize15 borderBottom centerTd borderRight"><input type="checkbox" id="checkVal"></td>
+	                    <td class="td fontSize15 borderBottom paddingLeft10">js研修資料</td>
+	                    <td class="td fontSize15 borderBottom centerTd"><label class="borderBoxLabel fontSize12">DRIVE LINE</label></td>
+	                    <td class="td fontSize15 borderBottom centerTd">高</td>
+	                    <td class="td fontSize15 borderBottom centerTd">2023/09/12</td>
+	                    <td class="td fontSize15 borderBottom centerTd"><a th:href="@{/taskManagement/edit}" class="borderBoxBtn fontSize12" id="edit">編集</a></td>
+	                </tr>
+	
+	                <script src="../taskManagement/taskManagement.js"></script>
+	            </table>
+	        </div>
+		</section>
+    </main>
+</body>
+</html>

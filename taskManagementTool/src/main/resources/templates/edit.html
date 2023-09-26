@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="taskManagement :: meta_header('編集',~{::link},~{::script})">   
+ 	<!-- CSS/JS -->
+    <link th:href="@{/css/edit.css}" rel="stylesheet">
+    <script th:src="@{/js/taskManagement.js}"></script>
+</head>
+
+<body>
+    <main>
+		<div th:replace="taskManagement :: header"></div>
+		<section id="mainLayout">
+	        <!-- ---------------------- ヘッド部分 ---------------------- -->
+	        <div class="logo">
+	            <p class="headerLogo"> - 編集 - </p>
+	            <!-- <img src="../image/editPageLogo.png" class="headerLogo"> -->
+	        </div>
+	
+	        <!-- ---------------------- メイン部分 ---------------------- -->
+	        <div id="container" class="wid80">
+	            <div class="borderBottom paddingBottom" id="firstLabelContainer">
+	                <!-- 名　称 -->
+	                <div class="labelLow">
+	                    <label class="label disFlexAllCenter">名　称　</label>
+	                    <input type="text" id="itemName" class="labItem">
+	                </div>
+	
+	                <!-- 更新ボタン -->
+	                <a th:href="@{/taskManagement/todo}" id="addBtn" class="fontSize13 borderBoxBtn">更新</a>
+	            </div>
+	
+	            <div id="secondLabelContainer">
+	                <!-- ラベル選択 -->
+	                <div class="labelItemContainer"><!-- id="labelItemContainer" -->
+	                    <label class="label disFlexAllCenter">ラベル　</label>
+	                    <select name="labelName" id="labelPullDown" class="labItem">
+	                        <option>1</option>
+	                        <option>2</option>
+	                        <option>3</option>
+	                        <option>4</option>
+	                        <option>5</option>
+	                    </select>
+	                </div>
+	                <!-- 進捗度 -->
+	                <div class="progressItemContainer"><!-- id="labelItemContainer" -->
+	                    <label class="label disFlexAllCenter">ラベル　</label>
+	                    <select name="progress" id="progressPullDown" class="labItem">
+	                        <option>未着手</option>
+	                        <option>10%</option>
+	                        <option>20%</option>
+	                        <option>30%</option>
+	                        <option>40%</option>
+	                        <option>50%</option>
+	                        <option>60%</option>
+	                        <option>70%</option>
+	                        <option>80%</option>
+	                        <option>90%</option>
+	                        <option>100%</option>
+	                        <option>確認中</option>
+	                        <option>完了</option>
+	                    </select>
+	                </div>
+	            </div>
+	
+	            <!-- 優先度 -->
+	            <div class="labelLow">
+	                <label class="label disFlexAllCenter">優先度　</label>
+	                <div id="radio">
+	                    <input type="radio" name="Priority" value="2" class="labItem radioItem"><label
+	                        class="margin-left10 margin-right50">高</label>
+	                    <input type="radio" name="Priority" value="1" class="labItem radioItem"><label
+	                        class="margin-left10 margin-right50">普</label>
+	                    <input type="radio" name="Priority" value="0" class="labItem radioItem"><label
+	                        class="margin-left10 margin-right50">低</label>
+	                </div>
+	            </div>
+	
+	            <!-- 期 日 -->
+	            <div class="labelLow">
+	                <label class="label disFlexAllCenter">期　日　</label>
+	                <div class="labItem">
+	                    <input type="date" id="startDay" class="Day">　〜　<input type="date" id="endDay" class="Day">
+	                </div>
+	            </div>
+	
+	            <!-- メ　モ -->
+	            <div class="labelLow" id="textarea">
+	                <label class="label">メ　モ　</label>
+	                <textarea class="labItem"></textarea>
+	            </div>
+	        </div>
+		</section>
+    </main>
+
+    <script src="../taskManagement/taskManagement.js"></script>
+</body>
+
+</html>

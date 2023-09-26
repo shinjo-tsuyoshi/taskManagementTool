@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="meta_header(title,links,scripts)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- タイトル/ファビコン設定 -->
+    <title th:text="${title}">タスク管理ツール</title>
+    <link rel="icon" th:href="@{/image/mainLogo.jpeg}">
+    
+    <!-- 共通CSS -->
+    <link th:href="@{/css/reset.css}" rel="stylesheet">          <!-- リセット -->
+    <link th:href="@{/css/common.css}" rel="stylesheet">         <!-- 全体 -->
+    <link th:href="@{/css/taskManagement.css}" rel="stylesheet"> <!-- Header-CSS -->
+
+    <!-- 固有CSS -->
+	<th:block th:replace="${links} ?: _" />
+    <th:block th:replace="${scripts} ?: _" />
+    
+    <!-- GoogleFonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Lora&family=Yusei+Magic&family=Zen+Kaku+Gothic+Antique:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/d5ec6649ac.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+		<header th:fragment="header">
+        <!-- ---------------------- メニュー部分 ---------------------- -->
+        <section id="menu">
+            <!-- ロゴ -->
+            <div id="mainLogo" >
+				<div id="mainLogoBg">
+	                <a th:href="@{/taskManagement/main}" class="menu a" id="mainLogoText">	<!--                     <img th:src="@{image/mainLogo.jpeg}" id="mainLogoImg" onclick="onChangeMainLayout(this)"> -->
+	                    タスク管理<br>ツール
+	                </a>
+                </div>
+            </div>
+            <!-- メニュー一覧 -->
+            <div id="mainContainer">
+<!--                <a href="javaScript:void(0)" class="menu" id="addition" onclick="onChangeMainLayout(this); return false;">タスク追加</a>-->
+<!--                <a href="javascript:void(0)" class="menu" id="todo" onclick="onChangeMainLayout(this)">TODO</a>-->
+<!--                <a href="javascript:void(0)" class="menu" id="todayTask" onclick="onChangeMainLayout(this)">今日のタスク</a>-->
+<!--                <a href="javascript:void(0)" class="menu" id="ganttChart" onclick="onChangeMainLayout(this)">ガントチャート</a>-->
+				<a th:href="@{/taskManagement/addition}" class="menu a" id="addition">タスク追加</a>
+                <a th:href="@{/taskManagement/todo}" class="menu a" id="todo">TODO</a>
+                <a th:href="@{/taskManagement/todayTask}" class="menu a" id="todayTask">今日のタスク</a>
+                <a th:href="@{/taskManagement/ganttChart}" class="menu a" id="ganttChart">ガントチャート</a>
+            </div>
+        </section>
+		</header>
+        <!-- ---------------------- メイン画面 ---------------------- -->
+        <section>
+<!--             <iframe th:src="/mainPage}" id="mainLayout"></iframe> -->
+        </section>
+    </main>
+<!--    <script th:src="@{/js/taskManagement.js}"></script>-->
+</body>
+
+</html>

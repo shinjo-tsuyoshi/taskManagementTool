@@ -1,0 +1,50 @@
+/* ************************
+ * テーブル レイアウト
+ * ************************/
+
+ #taskTable{
+    border-collapse:  collapse; 
+    width: 100%;
+}
+
+#taskTable .th{
+    border-bottom: solid 1px;
+    font-weight: normal;
+}
+
+#taskTable .td{
+    font-weight: normal;
+}
+
+#taskTable .borderRight{
+    border-right: var(--sub-border-color);
+}
+
+#taskTable .paddingLeft10{
+    padding-left: 20px;
+}
+
+#taskTable .centerTd{
+    text-align: center;
+    padding: 10px 0;
+}
+
+#taskTh{
+    width: 43%;
+}
+
+#checkBoxTh{
+    width: 8%;
+}
+#labelTh{
+    width: 18%;
+}
+#priorityTh{
+    width: 10%;
+}
+#dayTh{
+    width: 13%;
+}
+#buttonTh{
+    width: 8%;
+}

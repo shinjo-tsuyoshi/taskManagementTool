@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="taskManagement :: meta_header('TODO',~{::link},~{::script})">   
+ 	<!-- CSS/JS -->
+    <link th:href="@{/css/todo.css}" rel="stylesheet">
+    <script th:src="@{/js/taskManagement.js}"></script>
+</head>
+
+<body>
+    <main>
+		<div th:replace="taskManagement :: header"></div>
+		<section id="mainLayout">
+	        <!-- ---------------------- ヘッド部分 ---------------------- -->
+	        <div class="logo">
+	            <p class="headerLogo"> - TODO - </p>
+	            <!-- <img src="../image/todoPageLogo.png" class="headerLogo"> -->
+	            <div class="searchContainer">
+	                <div class="searchBox1">
+	                    <label>項目</label>
+	                    <select>
+	                        <option>ラベル</option>
+	                        <option>進捗(以前)</option>
+	                        <option>優先度</option>
+	                        <option>締切日(以前)</option>
+	                    </select>
+	                    <label>検索</label>
+	                    <input type="text">
+	                </div>
+	                <div class="searchBox2">
+	                    <input type="checkbox">
+	                    <p class="marginLeft10">進捗100%を含める</p>
+	                </div>
+	            </div>
+	        </div>
+	
+	        <!-- ---------------------- メイン部分 ---------------------- -->
+	        <div class="wid80">
+	            <table id="taskTable">
+	                <tr>
+	                    <th class="th fontSize16" id="taskTh">タスク</th>
+	                    <th class="th fontSize16" id="labelTh">ラベル</th>
+	                    <th class="th fontSize16" id="progressTh">進捗</th>
+	                    <th class="th fontSize16" id="priorityTh">優先度</th>
+	                    <th class="th fontSize16" id="dayTh">締切日</th>
+	                    <th class="th fontSize16" id="editTh"></th>
+	                    <th class="th fontSize16" id="deleteTh"></th>
+	                </tr>
+	                <!-- ここは仮 jsで入れる部分 -->
+	                <tr th:each="test:${taskList}" th:object="${test}" class="tdBorderBottom">
+	                    <td th:text="*{taskName}" class="td fontSize15 borderBottom paddingLeft10">js研修資料</td>
+	                    <td class="td fontSize15 borderBottom centerTd"><label th:text="*{label}" class="td borderBoxLabel fontSize12">DRIVE LINE</label></td>
+	                    <td class="td fontSize15 borderBottom centerTd">0%</td>
+	                    <td th:text="*{priority}" class="td fontSize15 borderBottom centerTd">高</td>
+	                    <td th:text="*{endDueDate}" class="td fontSize15 borderBottom centerTd fontSize12">2023/09/12</td>
+	                    <td class="td fontSize15 borderBottom centerTd"><a th:href="@{/taskManagement/edit}" class="td borderBoxBtn fontSize12" id="edit">編集</a></td>
+	                    <td class="td fontSize15 borderBottom centerTd"><a th:href="@{/taskManagement/todo}" class="td borderBoxBtn fontSize12" id="delete">削除</a></td>
+	                </tr>
+	
+	                <script src="../taskManagement/taskManagement.js"></script>
+	            </table>
+	        </div>
+		</section>
+    </main>
+</body>
+
+</html>

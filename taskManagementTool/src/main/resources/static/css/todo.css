@@ -1,0 +1,56 @@
+/* ************************
+ * テーブル レイアウト
+ * ************************/
+
+#taskTable{
+    border-collapse:  collapse; 
+    width: 100%;
+}
+
+#taskTable .th{
+    border-bottom: solid 5px;
+    font-size: 1.5vw;
+    font-weight: normal;
+}
+
+#taskTable .td{
+    font-size: 1.2vw;
+    font-weight: normal;
+    border: none;
+}
+
+.tdBorderBottom{
+	border-bottom: dashed 2px var(--sub-border-color);
+}
+
+#taskTable .paddingLeft10{
+    padding-left: 20px;
+}
+
+#taskTable .centerTd{
+    text-align: center;
+    padding: 5px 0;
+}
+
+#taskTh{
+    width: 40%;
+}
+
+#labelTh{
+    width: 18%;
+}
+#progressTh{
+    width: 8%;
+}
+#priorityTh{
+    width: 8%;
+}
+#dayTh{
+    width: 10%;
+}
+#editTh{
+    width: 8%;
+}
+#deleteTh{
+	width: 8%;
+}

@@ -1,0 +1,184 @@
+/* ************************
+ * ページ全体のレイアウト
+ * ************************/
+ 
+ :root{
+	 --main-color: #F4C14E;
+	 --sub-color: #F4E0B9;
+	 --sub-bg-color: #999;
+	 --sub-font-color: #fff;
+	 --sub-border-color: #bebebe;
+ }
+ 
+ main{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--sub-color);
+    color: var(--sub-bg-color);
+}
+
+input,
+textarea,
+select,
+input[type=checkbox],
+input[type=radio]{
+	border:0.3px solid var(--main-color);
+	color: var(--sub-bg-color-color);
+}
+
+/* ページロゴ レイアウト */
+.logo{
+    height: 15%;
+    width: 100%;
+    padding: 10px 0 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 全フォント 書体 */
+*{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: 400;
+}
+
+/* ヘッダーフォント 書体 */
+.headerLogo{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 4vw;
+}
+
+ /* aタグ 全般のレイアウト */
+a{
+    text-decoration: none;
+    color: var(--sub-bg-color);
+}
+
+/* 縦横 センター レイアウト */
+.disFlexAllCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ************************
+ * フォントサイズ
+ * ************************/
+.fontSize12{
+    font-size: 1.2vw;
+}
+
+.fontSize13{
+    font-size: 1.3vw;
+}
+
+.fontSize14{
+    font-size: 1.4vw;
+}
+
+.fontSize15{
+    font-size: 1.5vw;
+}
+
+.fontSize16{
+    font-size: 1.6vw;
+}
+
+/* ************************
+ * ボーダー
+ * ************************/
+/* ボタン系のボックスボーダー */
+.borderBoxBtn{
+    border: solid 1px  var(--sub-border-color);
+    padding: 5px 3px;
+    text-align: center;
+}
+
+/* ラベル系のボックスボーダー */
+.borderBoxLabel{
+    border: solid 1px var(--sub-border-color);
+    border-radius: 15%;
+    padding: 5px 8px;
+    text-align: center;
+}
+
+/* 下線 灰色 */
+.borderBottom{
+    border-bottom: solid 1px var(--sub-border-color);
+}
+
+/* ************************
+ * 余白
+ * ************************/
+/* padding 余白 bottom 30 */
+.paddingBottom{
+    padding-bottom: 30px;
+}
+
+.marginRight10{
+    margin-right: 10px;
+}
+
+.marginLeft10{
+    margin-left: 10px;
+}
+
+/* ************************
+ * サーチボックス
+ * ************************/
+
+.searchContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px 5vw 0 0;
+}
+
+.searchBox1 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.searchBox1 label {
+    /* width: 15%; */
+    margin: 0 10px;
+}
+.searchBox1 select{
+    width: 24%;
+}
+.searchBox1 input {
+    width: 40%;
+}
+
+.searchBox2 {
+    width: 100%;
+    height: 25%;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ************************
+ * メイン画面 レイアウト
+ * ************************/
+
+.wid80{
+    width: 90%;
+    height: 85%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ /* ************************
+ * メインセクション
+ * ************************/
+
+ #mainLayout{
+    width: 80vw;
+    height: 100vh;
+ }
